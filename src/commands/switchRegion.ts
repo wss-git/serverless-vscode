@@ -9,6 +9,7 @@ import { isPathExists, createFile } from '../utils/file';
 import { MultiStepInput } from '../ui/MultiStepInput';
 import { recordPageView } from '../utils/visitor';
 import { getConfig } from '../utils/config';
+// import { SSL_OP_ALL } from 'constants';
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -26,7 +27,7 @@ export function switchRegion(context: vscode.ExtensionContext) {
       vscode.window.showInformationMessage('Region is not available because you have configured custom endpoint!');
       return;
     }
-
+// SSL_OP_ALL
     await process(context).catch(vscode.window.showErrorMessage);
   }));
 }
